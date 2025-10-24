@@ -1,9 +1,9 @@
-import Ways from "../components/Ways";
+import LogRegForm from "../components/LogRegForm";
 
 const SignUp = () => {
   return (
     <div>
-      <Ways title="Sign Up" />
+      <LogRegForm title="Sign Up" />
     </div>
   );
 };

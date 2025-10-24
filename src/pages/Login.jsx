@@ -1,12 +1,10 @@
-import { Link } from "react-router-dom";
-import Ways from "../components/Ways";
+import LogRegForm from "../components/LogRegForm";
 
 const Login = () => {
   return (
-    <div>
-      <Ways title="Login" />
-      <Link to="/signup">Go to Sign Up</Link>
-    </div>
+    <>
+      <LogRegForm title="Log In" />
+    </>
   );
 };
 
