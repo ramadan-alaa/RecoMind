@@ -90,13 +90,13 @@ const Verification = () => {
         <img
           src={Key}
           alt="Key Illustration"
-          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[547px] h-auto md:ml-12"
+          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[547px] h-auto "
         />
       </div>
 
       {/* Right Section (Verification Form) */}
       <div className="flex-1 flex flex-col justify-center items-center gap-4 w-full max-w-[600px] min-h-[620px] bg-[var(--Primary)] p-6 sm:p-10 md:p-[74px] rounded-lg shadow-2xl">
-        <h1 className="text-4xl font-normal mb-[52px] text-[var(--Secondary)]">
+        <h1 className="text-5xl font-normal mb-[52px] text-[var(--Secondary)]">
           Verification Code
         </h1>
         <p className="text-start font-medium text-xl text-[var(--font_primary)] mb-4">
