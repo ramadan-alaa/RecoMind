@@ -25,7 +25,7 @@ const ForgotPassword = () => {
           />
         </div>
 
-        {/* Right Section (Form) */}
+        {/* Right Section (Fotgot Password Form) */}
         <div className="flex-1 flex flex-col justify-center items-center gap-4 w-full max-w-[550px] min-h-[550px] bg-[var(--Primary)] p-6 sm:p-10 md:p-[74px] rounded-lg shadow-2xl">
           {/* Email Input */}
           <div className="flex flex-col gap-2 w-full">

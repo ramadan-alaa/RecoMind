@@ -10,6 +10,7 @@ import MasterLayout from "../layouts/MasterLayout";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
 import ForgotPassword from "../pages/ForgotPassword";
+import Verification from "../pages/Verification";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
         <Route index element={<Login />}></Route>
         <Route path="signup" element={<SignUp />}></Route>
         <Route path="forgotpassword" element={<ForgotPassword />}></Route>
+        <Route path="verification" element={<Verification />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Route>
       {/* Main Routes */}
