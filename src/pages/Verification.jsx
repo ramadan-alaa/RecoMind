@@ -115,7 +115,7 @@ const Verification = () => {
               onKeyDown={(e) => handleKeyDown(i, e)}
               ref={(el) => (inputRefs.current[i] = el)}
               disabled={isLoading}
-              className={`w-[75px] h-[75px] text-center text-3xl font-medium rounded-lg border-2 bg-transparent text-[var(--font_primary)] transition duration-150 focus:ring-0 outline-none ${
+              className={`w-[45px] h-[45px] md:w-[75px] md:h-[75px] text-center text-3xl font-medium rounded-lg border-2 bg-transparent text-[var(--font_primary)] transition duration-150 focus:ring-0 outline-none ${
                 otpIsValid
                   ? "border-[var(--success)]"
                   : otpIsInvalid
