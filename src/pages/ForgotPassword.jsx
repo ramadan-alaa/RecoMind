@@ -75,7 +75,7 @@ const ForgotPassword = () => {
             className={`w-full rounded-lg py-2 font-medium text-[22px] transition-all ${
               valid
                 ? "bg-[var(--Secondary)] text-[var(--Primary)] hover:opacity-80"
-                : "bg-gray-400 text-white cursor-not-allowed"
+                : "bg-gray-400 text-[var(--Primary)] cursor-not-allowed"
             }`}
           >
             Reset Password

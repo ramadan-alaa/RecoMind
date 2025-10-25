@@ -11,7 +11,7 @@
   --Primary: #060b1b;
   --Secondary: #7ee3ff;
 
-  --BG_gradient: linear-gradient(-220deg, #060b1b 62%, #7ee3ff);
+  --BG_gradient: linear-gradient(127deg, #070b1c 63.63%, #7ee3ff 142.58%);
   --font_primary: #eeeeee;
   --font_secondary: #7f7f7f;
   --font_tertiary: #b8adad;
@@ -20,7 +20,7 @@
   --success: #64b883;
   --error: #df5d5d;
 
-  --border_color: #F9F9F9;
+  --border_color: #f9f9f9;
 
   font-family: "Garet", sans-serif;
   color-scheme: dark;
