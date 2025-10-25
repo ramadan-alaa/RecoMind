@@ -20,6 +20,8 @@
   --success: #64b883;
   --error: #df5d5d;
 
+  --border_color: #F9F9F9;
+
   font-family: "Garet", sans-serif;
   color-scheme: dark;
   line-height: 1.5;
@@ -84,7 +86,6 @@ body.fade.active {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
