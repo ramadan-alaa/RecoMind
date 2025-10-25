@@ -11,6 +11,7 @@ import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
 import ForgotPassword from "../pages/ForgotPassword";
 import Verification from "../pages/Verification";
+import Completed from "../pages/Completed";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         <Route path="signup" element={<SignUp />}></Route>
         <Route path="forgotpassword" element={<ForgotPassword />}></Route>
         <Route path="verification" element={<Verification />}></Route>
+        <Route path="completed" element={<Completed />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Route>
       {/* Main Routes */}
