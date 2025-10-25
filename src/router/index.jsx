@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp";
 import MasterLayout from "../layouts/MasterLayout";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout />}>
         <Route index element={<Login />}></Route>
         <Route path="signup" element={<SignUp />}></Route>
+        <Route path="forgotpassword" element={<ForgotPassword />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Route>
       {/* Main Routes */}

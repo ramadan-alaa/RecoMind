@@ -6,12 +6,15 @@ import Ai from "../assets/images/Ai.png";
 import Logo from "../assets/images/Logo.png";
 import password from "../assets/images/password.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LogRegForm = ({ title }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordValue, setPasswordValue] = useState("");
 
   const isSignUp = title.toLowerCase().includes("sign");
+
+  const navigate = useNavigate();
 
   const isPasswordValid = (pass) => {
     const minLength = pass.length >= 8;
@@ -173,17 +176,17 @@ const LogRegForm = ({ title }) => {
                 <input type="checkbox" className="accent-[var(--Secondary)]" />
                 Remember me
               </label>
-              <a
-                href="#"
-                className="text-[var(--Secondary)] font-normal text-base"
+              <span
+                onClick={() => navigate("/forgotpassword")}
+                className="text-[var(--Secondary)] font-normal text-base cursor-pointer hover:underline"
               >
                 Forgot Password?
-              </a>
+              </span>
             </div>
           )}
 
           {/* Submit Button */}
-          <button className="mt-4 w-full bg-[var(--Secondary)] text-[var(--Primary)] rounded-md py-2 font-medium text-[22px] hover:opacity-80 transition-all">
+          <button className="mt-4 w-full bg-[var(--Secondary)] text-[var(--Primary)] rounded-lg py-2 font-medium text-[22px] hover:opacity-80 transition-all">
             {title}
           </button>
 
