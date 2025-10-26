@@ -37,7 +37,7 @@ const LogRegForm = ({ title }) => {
         />
       </div>
 
-      <div className="container min-h-screen flex flex-col md:flex-row items-center justify-center gap-12 p-6 md:p-8 mx-auto">
+      <div className="container flex flex-col md:flex-row items-center justify-center gap-12 mx-auto">
         {/* Left Section */}
         <div className="flex-1 flex flex-col items-center md:items-start justify-center w-full">
           <img
@@ -48,7 +48,7 @@ const LogRegForm = ({ title }) => {
         </div>
 
         {/* Right Section (Form) */}
-        <div className="flex-1 flex flex-col gap-4 w-full max-w-[550px] bg-[var(--Primary)] p-6 sm:p-10 md:p-[74px] rounded-lg shadow-2xl">
+        <div className="flex-1 flex flex-col gap-4 w-full max-w-[550px] bg-[var(--Primary)] p-6 sm:p-10 md:p-[74px] rounded-3xl shadow-2xl">
           <h1 className="text-4xl md:text-5xl font-normal mb-4 text-center text-[var(--Secondary)]">
             {title}
           </h1>
@@ -149,7 +149,7 @@ const LogRegForm = ({ title }) => {
             {/* Password Info (Only for Sign Up) */}
             {isSignUp && passwordValue && (
               <div
-                className={`flex items-start gap-2 mt-2 text-xs ${
+                className={`flex items-center gap-2 mt-2 text-xs ${
                   passwordValid
                     ? "text-[var(--success)]"
                     : "text-[var(--error)]"

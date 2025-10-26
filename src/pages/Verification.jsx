@@ -137,13 +137,13 @@ const Verification = () => {
                 : "text-gray-500 cursor-not-allowed no-underline"
             }`}
           >
-            Resend Code
+            Resend Code,
           </button>{" "}
           {canResend ? (
-            <span>now.</span>
+            <span className="text-[var(--Secondary)]">now.</span>
           ) : (
-            <span>
-              after <strong>{counter}</strong> second{counter !== 1 && "s"}.
+            <span className="text-[var(--Secondary)]">
+              After <strong>{counter}</strong> second{counter !== 1 && "s"}.
             </span>
           )}
         </div>
