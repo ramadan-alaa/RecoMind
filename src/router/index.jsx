@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import MasterLayout from "../layouts/MasterLayout";
 import Home from "../pages/Home";
-import NotFound from "../components/NotFound";
+import NotFound from "../UI/NotFound";
 import ForgotPassword from "../pages/ForgotPassword";
 import Verification from "../pages/Verification";
 import Completed from "../pages/Completed";

@@ -1,50 +1,25 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { SideBar } from "../UI/SideBar";
+// import { useEffect, useState } from "react";
 
 const MasterLayout = () => {
+  // const {isAuthenticated} = useAuth();
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     navigate("/");
+  //   }
+  // }, [isAuthenticated]);
   return (
-    <div className="flex bg-[var(--Primary)]">
-      {/* Header */}
-      <header className="flex flex-col items-center py-4 border-b border-[rgba(255,255,255,0.1)]">
-        <h1 className="text-2xl font-bold text-[var(--Secondary)]">RecoMind</h1>
-        <nav className="flex items-center flex-col gap-6">
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              `hover:text-[var(--Secondary)] transition-all ${
-                isActive ? "text-[var(--Secondary)] font-semibold" : ""
-              }`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/profile"
-            className={({ isActive }) =>
-              `hover:text-[var(--Secondary)] transition-all ${
-                isActive ? "text-[var(--Secondary)] font-semibold" : ""
-              }`
-            }
-          >
-            Profile
-          </NavLink>
-          <NavLink
-            to="/settings"
-            className={({ isActive }) =>
-              `hover:text-[var(--Secondary)] transition-all ${
-                isActive ? "text-[var(--Secondary)] font-semibold" : ""
-              }`
-            }
-          >
-            Settings
-          </NavLink>
-        </nav>
-      </header>
+    <main className="flex bg-[var(--Primary)]">
+      {/* Sidebar */}
+      <SideBar />
 
       {/* Main Content */}
       <main className="min-h-screen">
         <Outlet />
       </main>
-    </div>
+    </main>
   );
 };
 
