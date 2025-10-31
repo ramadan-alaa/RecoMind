@@ -29,17 +29,15 @@ const LogRegForm = ({ title }) => {
 
   return (
     <>
-      <div className="container mx-auto p-6 md:p-8 flex justify-center md:justify-start">
-        <img
-          src={Logo}
-          alt="RecoMind Logo"
-          className="w-[110px] md:w-[133px] h-auto mb-6 md:mb-0"
-        />
-      </div>
-
-      <div className="container flex flex-col md:flex-row items-center justify-center gap-12 mx-auto">
+      <div className="container flex flex-col md:flex-row items-start justify-center gap-12 md:mt-12 mx-auto">
         {/* Left Section */}
-        <div className="flex-1 flex flex-col items-center md:items-start justify-center w-full">
+        <div className="flex-1 flex flex-col items-center md:items-start justify-center w-full gap-12">
+          <img
+            src={Logo}
+            alt="RecoMind Logo"
+            className="w-[110px] md:w-[133px] h-auto mb-6 md:mb-0"
+          />
+
           <img
             src={Ai}
             alt="RecoMind Illustration"
@@ -48,7 +46,7 @@ const LogRegForm = ({ title }) => {
         </div>
 
         {/* Right Section (Form) */}
-        <div className="flex-1 flex flex-col gap-4 w-full max-w-[550px] bg-[var(--Primary)] p-6 sm:p-10 md:p-[74px] rounded-3xl shadow-2xl">
+        <div className="flex-1 flex flex-col gap-4 w-full max-w-[550px] bg-[var(--Primary)] p-6 sm:p-10 md:px-[74px] md:py-[34px] rounded-3xl shadow-2xl">
           <h1 className="text-4xl md:text-5xl font-normal mb-4 text-center text-[var(--Secondary)]">
             {title}
           </h1>
