@@ -42,7 +42,7 @@ const Sidebar = () => {
       {/* Sidebar container */}
       <div className="flex">
         <aside
-          className={`bg-[var(--Primary)] border-r border-[#EFEFEF]/10 flex flex-col items-center py-6 px-4 gap-8 
+          className={`bg-[var(--Primary)] border-r border-[#EFEFEF]/10 flex flex-col items-center pt-16 px-4 gap-8 
                       w-[134px] md:w-[134px] min-h-full md:min-h-screen
                       fixed md:sticky top-0 left-0
                       transition-transform duration-300 ease-in-out
@@ -55,8 +55,8 @@ const Sidebar = () => {
         >
           <div className="w-12 h-12 flex items-center justify-center">
             <svg
-              width="79"
-              height="90"
+              width="50"
+              height="38"
               viewBox="0 0 79 90"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +330,7 @@ const Sidebar = () => {
             </svg>
           </div>
 
-          <nav className="flex flex-col items-center gap-8 flex-1 mt-6">
+          <nav className="flex flex-col items-center gap-8 flex-1">
             {menuItems.map((item) => (
               <NavLink
                 key={item.id}
