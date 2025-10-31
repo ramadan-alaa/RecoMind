@@ -372,7 +372,7 @@ const Sidebar = () => {
                         />
                       )}
                     </div>
-                    <span className="text-[var(--font_primary)] text-xs md:text-[12px] mt-1">
+                    <span className="text-[var(--font_primary)] text-xs md:text-base mt-1">
                       {item.label}
                     </span>
                   </>
