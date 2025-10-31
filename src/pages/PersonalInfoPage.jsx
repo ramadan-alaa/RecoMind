@@ -13,16 +13,23 @@ const PersonalInfoPage = () => {
   });
 
   const [hasChanges, setHasChanges] = useState(false);
+  const [resetEdit, setResetEdit] = useState(false);
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field, value, resetSave = false) => {
     setUserData((prev) => ({ ...prev, [field]: value }));
-    setHasChanges(true);
+    if (resetSave) {
+      setHasChanges(false);
+    } else {
+      setHasChanges(true);
+    }
   };
 
   const handleSaveChanges = async () => {
     console.log("Saving changes:", userData);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setHasChanges(false);
+    setResetEdit(true);
+    setTimeout(() => setResetEdit(false), 10);
     alert("Changes saved successfully!");
   };
 
@@ -46,16 +53,19 @@ const PersonalInfoPage = () => {
               <InputField
                 label="Name"
                 value={userData.name}
-                onChange={(e) => handleInputChange("name", e.target.value)}
-                onEdit={() => console.log("Edit name")}
+                onChange={(newValue, resetSave) =>
+                  handleInputChange("name", newValue, resetSave)
+                }
+                resetEdit={resetEdit}
               />
-
               <InputField
                 label="Phone"
                 value={userData.phone}
-                onChange={(e) => handleInputChange("phone", e.target.value)}
-                onEdit={() => console.log("Edit phone")}
+                onChange={(newValue, resetSave) =>
+                  handleInputChange("phone", newValue, resetSave)
+                }
                 type="tel"
+                resetEdit={resetEdit}
               />
             </div>
 
@@ -63,9 +73,11 @@ const PersonalInfoPage = () => {
               <InputField
                 label="Email"
                 value={userData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
-                onEdit={() => console.log("Edit email")}
+                onChange={(newValue, resetSave) =>
+                  handleInputChange("email", newValue, resetSave)
+                }
                 type="email"
+                resetEdit={resetEdit}
               />
             </div>
           </div>
