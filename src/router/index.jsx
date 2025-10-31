@@ -12,6 +12,9 @@ import NotFound from "../UI/NotFound";
 import ForgotPassword from "../pages/ForgotPassword";
 import Verification from "../pages/Verification";
 import Completed from "../pages/Completed";
+import PersonalInfoPage from "../pages/PersonalInfoPage";
+import DashBoard from "../pages/DashBoard";
+import ChatBot from "../pages/ChatBot";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,8 +30,11 @@ const router = createBrowserRouter(
       </Route>
       {/* Main Routes */}
       <Route path="/home" element={<MasterLayout />}>
-        <Route index element={<Home />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
+        <Route index element={<Home />} />
+        <Route path="dashboard" element={<DashBoard />} />
+        <Route path="chatbot" element={<ChatBot />} />
+        <Route path="profile" element={<PersonalInfoPage />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </>
   )

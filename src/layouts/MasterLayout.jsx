@@ -1,25 +1,17 @@
 import { Outlet } from "react-router-dom";
-import { SideBar } from "../UI/SideBar";
-// import { useEffect, useState } from "react";
+import Sidebar from "../UI/SideBar";
 
 const MasterLayout = () => {
-  // const {isAuthenticated} = useAuth();
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     navigate("/");
-  //   }
-  // }, [isAuthenticated]);
   return (
-    <main className="flex bg-[var(--Primary)]">
+    <div className="flex bg-[var(--Primary)] min-h-screen">
       {/* Sidebar */}
-      <SideBar />
+      <Sidebar />
 
-      {/* Main Content */}
-      <main className="min-h-screen">
+      {/* Page Content */}
+      <main className="flex-1">
         <Outlet />
       </main>
-    </main>
+    </div>
   );
 };
 
