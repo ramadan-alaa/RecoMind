@@ -42,7 +42,7 @@ const Sidebar = () => {
       {/* Sidebar container */}
       <div className="flex">
         <aside
-          className={`bg-[var(--Primary)] border-r border-[#EFEFEF]/10 flex flex-col items-center py-6 px-4 gap-8
+          className={`bg-[var(--Primary)] border-r border-[#EFEFEF]/10 flex flex-col items-center py-6 px-4 gap-8 
                       w-[134px] md:w-[134px] min-h-full md:min-h-screen
                       fixed md:sticky top-0 left-0
                       transition-transform duration-300 ease-in-out

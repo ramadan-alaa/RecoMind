@@ -34,7 +34,7 @@ const PersonalInfoPage = () => {
   };
 
   return (
-    <div className="min-h-screen p-4 sm:px-6 md:px-8 lg:w-[907px] ml-0 lg:ml-[65px]">
+    <div className="min-h-screen p-4 sm:px-6 md:px-8 lg:w-[907px] ml-0 lg:ml-[65px] ">
       <h1 className="text-[var(--Secondary)] text-[28px] sm:text-[34px] md:text-[40px] font-semibold mb-8 text-center md:text-left">
         Personal Info
       </h1>
