@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from "../components/SideBar/Sidebar";
 import Main from "../components/Main/Main";
 import { ChatBotContextProvider } from "../Context/ChatBotContext";
 
