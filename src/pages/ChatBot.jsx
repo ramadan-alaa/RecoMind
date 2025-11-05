@@ -6,8 +6,10 @@ const ChatBot = () => {
   return (
     <div>
       <ChatBotContextProvider>
-        <Sidebar />
-        <Main />
+        <div className="flex">
+          <Sidebar />
+          <Main />
+        </div>
       </ChatBotContextProvider>
     </div>
   );

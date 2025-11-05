@@ -104,6 +104,28 @@ function ChatBotContextProvider({ children }) {
 		);
 	};
 
+	// Rename a chat session
+	const renameSession = (sessionId, newTitle) => {
+		if (!newTitle || !newTitle.trim()) {
+			return false;
+		}
+
+		setChatSessions((prev) =>
+			prev.map((session) => {
+				if (session.id === sessionId) {
+					return {
+						...session,
+						title: newTitle.trim(),
+						updatedAt: new Date().toISOString(),
+					};
+				}
+				return session;
+			})
+		);
+
+		return true;
+	};
+
 	// Switch to a different chat session
 	const loadSession = (sessionId) => {
 		const session = chatSessions.find((s) => s.id === sessionId);
@@ -310,6 +332,7 @@ function ChatBotContextProvider({ children }) {
 		currentSession,
 		loadSession,
 		deleteSession,
+		renameSession, // ✅ Added rename function
 	};
 
 	return <ChatBotContext.Provider value={contextValue}>{children}</ChatBotContext.Provider>;
