@@ -1,0 +1,321 @@
+.sidebar {
+	min-height: 100vh;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #f0f4f9;
+	padding: 25px 15px;
+}
+.sidebar img {
+	width: 20px;
+}
+.sidebar .menu {
+	display: block;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.sidebar .new-chat {
+	margin-top: 40px;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: auto;
+	padding: 10px 15px;
+	background-color: #e6eaf1;
+	font-size: 14px;
+	color: gray;
+	cursor: pointer;
+	border-radius: 50px;
+}
+.sidebar .recent {
+	display: flex;
+	flex-direction: column;
+}
+.sidebar .recent-title {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.sidebar .recent-entry {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	padding-right: 40px;
+	border-radius: 50px;
+	color: #282828;
+	cursor: pointer;
+	transition: 0.4s all;
+}
+.sidebar .recent-entry:hover {
+	background-color: #e2e6eb;
+}
+.sidebar .bottom {
+	display: flex;
+	flex-direction: column;
+}
+.sidebar .bottom-item {
+	padding-right: 10px;
+	cursor: pointer;
+}
+.no-recent {
+	color: #808080;
+	font-size: 14px;
+	padding: 10px 15px;
+	text-align: center;
+	font-style: italic;
+}
+.recent-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 10px;
+}
+
+.clear-history-btn {
+	background: none;
+	border: none;
+	color: #808080;
+	font-size: 24px;
+	cursor: pointer;
+	padding: 0;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 0.3s;
+}
+
+.clear-history-btn:hover {
+	color: #ff4444;
+}
+/* Toast styles */
+.custom-toast {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 280px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.toast-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.toast-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.toast-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.toast-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.toast-btn.confirm {
+  background-color: #e53935;
+  color: white;
+}
+
+.toast-btn.confirm:hover {
+  background-color: #c62828;
+}
+
+.toast-btn.cancel {
+  background-color: #444;
+  color: #eee;
+}
+
+.toast-btn.cancel:hover {
+  background-color: #555;
+}
+
+.toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-hide {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Add to your existing sidebar.css */
+
+/* Session grouping */
+.session-group {
+	margin-bottom: 20px;
+}
+
+.date-label {
+	font-size: 11px;
+	color: #888;
+	padding: 8px 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* Active session highlight */
+.recent-entry.active {
+	background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+	color: white;
+}
+
+.recent-entry.active p {
+	color: white;
+	font-weight: 500;
+}
+
+/* Session title */
+.session-title {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Delete session button */
+.delete-session-btn {
+	opacity: 0;
+	background: none;
+	border: none;
+	color: #ff4444;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 4px;
+	transition: all 0.2s;
+	margin-left: auto;
+}
+
+.recent-entry:hover .delete-session-btn {
+	opacity: 1;
+}
+
+.delete-session-btn:hover {
+	background: rgba(255, 68, 68, 0.1);
+	color: #ff0000;
+}
+
+.recent-entry.active .delete-session-btn {
+	color: white;
+}
+
+.recent-entry.active .delete-session-btn:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Toast styles */
+.custom-toast {
+	background: white;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	min-width: 300px;
+	animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.toast-content {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.toast-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	margin: 0;
+}
+
+.toast-subtitle {
+	font-size: 13px;
+	color: #666;
+	margin: 0;
+}
+
+.toast-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.toast-btn {
+	flex: 1;
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.toast-btn.confirm {
+	background: #ff4444;
+	color: white;
+}
+
+.toast-btn.confirm:hover {
+	background: #ff0000;
+}
+
+.toast-btn.cancel {
+	background: #f0f0f0;
+	color: #333;
+}
+
+.toast-btn.cancel:hover {
+	background: #e0e0e0;
+}
+
+/* Improve recent entry layout */
+.recent-entry {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.2s;
+	position: relative;
+}
+
+.recent-entry img {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
