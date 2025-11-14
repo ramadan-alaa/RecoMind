@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "../UI/SideBar";
+import Navbar from "../UI/Navbar";
 
 const MasterLayout = () => {
   return (
     <div className="flex bg-[var(--Primary)] min-h-screen">
-      {/* Sidebar */}
-      <Sidebar />
+      {/* Navbar */}
+      <Navbar />
 
       {/* Page Content */}
       <main className="flex-1">

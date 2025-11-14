@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Home, LayoutDashboard, Bot, Menu, X } from "lucide-react";
 import user from "../assets/images/user.png";
 
-const Sidebar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
@@ -42,7 +42,7 @@ const Sidebar = () => {
       {/* Sidebar container */}
       <div className="flex">
         <aside
-          className={`bg-[var(--Primary)] border-r border-[#EFEFEF]/10 flex flex-col items-center pt-16 px-4 gap-8 
+          className={`bg-[var(--Primary)] border-r border-[#EFEFEF]/10 flex flex-col items-center pt-16 px-4 gap-8 z-[9999] 
                       w-[134px] md:w-[134px] min-h-full md:min-h-screen
                       fixed md:sticky top-0 left-0
                       transition-transform duration-300 ease-in-out
@@ -394,7 +394,7 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;
 
 // Burger Menu
 
