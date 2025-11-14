@@ -5,16 +5,30 @@
   justify-content: space-between;
   background: var(--Primary);
   padding: 20px 16px;
-  position: relative;
+  position: fixed;
+  left: 134px;
+  top: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   width: 310px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
+  z-index: 50;
 }
 
 .sidebar.closed {
   width: 70px;
   padding: 20px 12px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: 0;
+    z-index: 1000;
+  }
+
+  .sidebar.closed {
+    width: 70px;
+  }
 }
 
 .header-section {
@@ -516,10 +530,14 @@
 @media (max-width: 768px) {
   .sidebar {
     width: 280px;
+    left: 0;
   }
 
   .sidebar.closed {
     width: 60px;
+    left: 0;
+    background: transparent;
+    border-right: 0;
   }
 
   .search-input {
