@@ -235,8 +235,8 @@
 }
 
 .user-message .avatar {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -249,8 +249,8 @@
 }
 
 .ai-message .avatar {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 45px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -258,8 +258,6 @@
 .ai-message .message-content {
   flex: 1;
   padding: 14px 20px;
-  background: rgba(126, 227, 255, 0.05);
-  border: 1px solid rgba(126, 227, 255, 0.15);
   border-radius: 16px;
   border-top-left-radius: 4px;
 }
