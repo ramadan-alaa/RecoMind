@@ -35,7 +35,7 @@
 .suggestion-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 32px;
   max-width: 700px;
   margin: 0 auto;
   padding: 0 20px;
@@ -49,6 +49,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+}
+
+.suggestion-card:nth-child(3) {
+  width: 133%;
+}
+
+.suggestion-card:nth-child(4) {
+  grid-column: 1 / -1;
 }
 
 .suggestion-card:hover {
@@ -379,7 +387,13 @@
 
   .suggestion-cards {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 24px;
+  }
+
+  .suggestion-card:nth-child(3),
+  .suggestion-card:nth-child(4) {
+    grid-column: 1;
+    width: 100%;
   }
 
   .suggestion-card {
