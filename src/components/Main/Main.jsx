@@ -109,35 +109,35 @@ function Main() {
         )}
 
         <div className="main-bottom">
-          <div className="search-box">
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                value={input}
-                disabled={loading}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your message here..."
-                aria-label="Chat message input"
-              />
-            </form>
-            <div className="input-actions">
-              <button
-                type="button"
-                className="icon-btn mic-btn"
-                aria-label="Voice input"
-              >
-                <FaMicrophone size={18} />
-              </button>
-              <button
-                type="button"
-                className="icon-btn send-btn"
-                onClick={handleSendClick}
-                disabled={loading || !input.trim()}
-                aria-label="Send message"
-              >
-                <FaPaperPlane size={18} />
-              </button>
+          <div className="search-box-wrapper">
+            <div className="search-box">
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  value={input}
+                  disabled={loading}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Type your message here..."
+                  aria-label="Chat message input"
+                />
+              </form>
             </div>
+            <button
+              type="button"
+              className="icon-btn mic-btn"
+              aria-label="Voice input"
+            >
+              <FaMicrophone size={20} />
+            </button>
+            <button
+              type="button"
+              className="icon-btn send-btn"
+              onClick={handleSendClick}
+              disabled={loading || !input.trim()}
+              aria-label="Send message"
+            >
+              <FaPaperPlane size={20} />
+            </button>
           </div>
         </div>
       </div>
