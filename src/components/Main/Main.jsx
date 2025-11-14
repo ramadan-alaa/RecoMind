@@ -1,7 +1,7 @@
 import "./main.css";
 import { assets } from "../../assets/assets";
 import { useChatBot } from "../../Context/ChatBotContext";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaMicrophone, FaPaperPlane } from "react-icons/fa";
 
 function Main() {
@@ -9,10 +9,53 @@ function Main() {
     useChatBot();
 
   const messagesEndRef = useRef(null);
+  const [isSidebarClosed, setIsSidebarClosed] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
+
+  useEffect(() => {
+    const checkSidebar = () => {
+      const sidebar = document.querySelector(".sidebar");
+      if (sidebar) {
+        const closed = sidebar.classList.contains("closed");
+        setIsSidebarClosed(closed);
+
+        const main = document.querySelector(".main");
+        if (main) {
+          if (closed) {
+            main.classList.add("sidebar-closed");
+          } else {
+            main.classList.remove("sidebar-closed");
+          }
+        }
+      }
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkSidebar();
+    window.addEventListener("resize", handleResize);
+
+    const observer = new MutationObserver(checkSidebar);
+    const sidebar = document.querySelector(".sidebar");
+
+    if (sidebar) {
+      observer.observe(sidebar, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const suggestionCards = [
     "What if we cut costs 10%?",
@@ -108,7 +151,9 @@ function Main() {
           </div>
         )}
 
-        <div className="main-bottom">
+        <div
+          className={`main-bottom ${isSidebarClosed ? "sidebar-closed" : ""}`}
+        >
           <div className="search-box-wrapper">
             <div className="search-box">
               <form onSubmit={handleSubmit}>
@@ -121,23 +166,47 @@ function Main() {
                   aria-label="Chat message input"
                 />
               </form>
+              {isMobile && (
+                <>
+                  <button
+                    type="button"
+                    className="icon-btn mic-btn"
+                    aria-label="Voice input"
+                  >
+                    <FaMicrophone size={18} />
+                  </button>
+                  <button
+                    type="button"
+                    className="icon-btn send-btn"
+                    onClick={handleSendClick}
+                    disabled={loading || !input.trim()}
+                    aria-label="Send message"
+                  >
+                    <FaPaperPlane size={18} />
+                  </button>
+                </>
+              )}
             </div>
-            <button
-              type="button"
-              className="icon-btn mic-btn"
-              aria-label="Voice input"
-            >
-              <FaMicrophone size={20} />
-            </button>
-            <button
-              type="button"
-              className="icon-btn send-btn"
-              onClick={handleSendClick}
-              disabled={loading || !input.trim()}
-              aria-label="Send message"
-            >
-              <FaPaperPlane size={20} />
-            </button>
+            {!isMobile && (
+              <>
+                <button
+                  type="button"
+                  className="icon-btn mic-btn"
+                  aria-label="Voice input"
+                >
+                  <FaMicrophone size={20} />
+                </button>
+                <button
+                  type="button"
+                  className="icon-btn send-btn"
+                  onClick={handleSendClick}
+                  disabled={loading || !input.trim()}
+                  aria-label="Send message"
+                >
+                  <FaPaperPlane size={20} />
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -68,28 +68,33 @@
 
 .main-bottom {
   position: fixed;
-  bottom: 2%;
-  left: 33%;
-  right: 5%;
-  padding: 20px;
+  bottom: 20px;
+  left: 68%;
+  transform: translateX(-50%);
+  width: calc(100% - 370px);
+  max-width: 900px;
+  padding: 0 20px;
   z-index: 10;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sidebar.closed ~ .main .main-bottom {
-  left: 70px;
+.main-bottom.sidebar-closed {
+  width: calc(100% - 130px);
+  left: 60%;
 }
+
 .main-bottom .search-box-wrapper .search-box form input::placeholder {
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 100%;
 }
+
 .search-box-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .search-box {
@@ -100,6 +105,7 @@
   padding: 12px 16px;
   border-radius: 16px;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .search-box:focus-within {
@@ -335,7 +341,53 @@
   animation: fadeIn 0.4s ease-in;
 }
 
+@media (max-width: 1024px) {
+  .main-bottom {
+    width: calc(100% - 340px);
+  }
+
+  .main-bottom.sidebar-closed {
+    width: calc(100% - 120px);
+  }
+}
+
 @media (max-width: 768px) {
+  .main-bottom {
+    width: calc(100% - 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+  }
+
+  .main-bottom.sidebar-closed {
+    width: calc(100% - 40px);
+    left: 50%;
+  }
+
+  .search-box-wrapper {
+    gap: 0;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .search-box form {
+    flex: 1;
+  }
+
+  .search-box input {
+    padding-right: 0;
+  }
+
+  .icon-btn {
+    padding: 8px;
+    position: relative;
+  }
+
   .greet h1 {
     font-size: 32px;
   }
@@ -353,17 +405,8 @@
     font-size: 14px;
   }
 
-  .search-box {
-    padding: 10px 14px;
-  }
-
   .search-box input {
     font-size: 14px;
-  }
-
-  .main-bottom {
-    left: 0;
-    padding: 16px;
   }
 
   .result {
@@ -385,10 +428,6 @@
   .ai-message .message-content p {
     font-size: 14px;
   }
-
-  .icon-btn {
-    padding: 10px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -405,5 +444,10 @@
   .ai-message .message-content {
     max-width: 90%;
     padding: 12px 16px;
+  }
+
+  .main-bottom {
+    width: calc(100% - 20px);
+    padding: 0 10px;
   }
 }
