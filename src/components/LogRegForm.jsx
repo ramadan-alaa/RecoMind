@@ -29,7 +29,7 @@ const LogRegForm = ({ title }) => {
 
   return (
     <>
-      <div className="container flex flex-col md:flex-row items-start md:justify-center gap-12 mt-12 md:mt-12 mx-auto h-[90vh]">
+      <div className="container flex flex-col md:flex-row md:justify-center gap-12 mt-12 md:mt-12 mx-auto h-[90vh] items-center">
         {/* Left Section */}
         <div className="flex-1 flex flex-col items-center md:items-start justify-center w-full gap-12">
           <svg
