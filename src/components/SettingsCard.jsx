@@ -57,7 +57,6 @@ export default function SettingsCard() {
       </div>
 
       {/* Divider */}
-      <div className="w-[90%] h-[1px] bg-[var(--Secondary)] opacity-20 mx-auto"></div>
 
       {/* Logout Button */}
       <button
