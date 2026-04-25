@@ -7,7 +7,7 @@ import {
   ForgotPasswordFunction,
   resetState,
 } from "../redux/features/ForgotPassword/ForgotPasswordSlice";
-import Forget from "../assets/images/forget.png";
+import Forget from "../assets/images/Key.png";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
